@@ -1,0 +1,15 @@
+version: '0.1.'
+services:
+  web:
+    build: .
+    ports:
+    - "8080:8000"
+    volumes:
+    - /home/alicja/Desktop/projects/xcube-services/cyanoalert:/config/
+    - logvolume01:/var/log
+#    links:
+#    - redis
+# redis:
+#    image: redis
+volumes:
+  logvolume01: {}

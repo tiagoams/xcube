@@ -41,5 +41,4 @@ ENV NUMBA_DISABLE_JIT 1
 EXPOSE 8000
 
 # Start server
-ENTRYPOINT ["/bin/bash", "-c"]
-CMD ["source activate xcube && xcube"]
+ENTRYPOINT ["/opt/conda/envs/xcube/bin/python", "/xcube/xcube/cli/cli.py"]

@@ -41,5 +41,5 @@ ENV NUMBA_DISABLE_JIT 1
 EXPOSE 8000
 
 # Start server
-#ENTRYPOINT ["/bin/bash", "-c"]
-ENTRYPOINT ["/bin/bash", "-c", "source activate xcube && xcube"]
+ENTRYPOINT ["/bin/bash", "-c"]
+CMD ["source activate xcube && xcube"]

@@ -6,13 +6,13 @@
 language: python
 
 python:
-  #- "3.5"
+  - "3.5"
   - "3.6"
   - "3.7"
 
 os:
   - linux
-  #- osx
+  - osx
 
 install:
   - echo Using python version ${TRAVIS_PYTHON_VERSION}

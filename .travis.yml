@@ -6,15 +6,16 @@
 language: python
 
 python:
-  - "3.5"
-  - "3.6"
+  #- "3.5"
+  #- "3.6"
   - "3.7"
 
 os:
   - linux
-  - osx
+  #- osx
 
 before_install:
+  - echo Using python version ${TRAVIS_PYTHON_VERSION}
   - sed 's/python >=3.6/python =${TRAVIS_PYTHON_VERSION}/g' environment.yml > environment_${TRAVIS_PYTHON_VERSION}.yml
 install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
@@ -23,7 +24,7 @@ install:
       wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
     fi
   - bash miniconda.sh -b -p $HOME/miniconda
-  - conda init bash
+  - $HOME/miniconda/bin/conda init bash
   - conda config --set always_yes yes --set changeps1 no
   - conda update -n base -q conda
   # Useful for debugging any issues with conda

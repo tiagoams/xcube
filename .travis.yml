@@ -7,17 +7,16 @@ language: python
 
 python:
   #- "3.5"
-  #- "3.6"
+  - "3.6"
   - "3.7"
 
 os:
   - linux
   #- osx
 
-before_install:
+install:
   - echo Using python version ${TRAVIS_PYTHON_VERSION}
   - sed 's/python >=3.6/python =${TRAVIS_PYTHON_VERSION}/g' environment.yml > environment_${TRAVIS_PYTHON_VERSION}.yml
-install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
     else

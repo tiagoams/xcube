@@ -26,6 +26,7 @@ install:
   - bash miniconda.sh -b -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
   - conda init bash
+  - source $HOME/.bashrc
   - conda config --set always_yes yes --set changeps1 no
   - conda update -n base -q conda
   # Useful for debugging any issues with conda

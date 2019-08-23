@@ -25,7 +25,7 @@ install:
   - bash miniconda.sh -b -p $HOME/miniconda
   - conda init bash
   - conda config --set always_yes yes --set changeps1 no
-  - conda update -q conda
+  - conda update -n base -q conda
   # Useful for debugging any issues with conda
   - conda info -a
   - conda env create --file environment_${TRAVIS_PYTHON_VERSION}.yml
